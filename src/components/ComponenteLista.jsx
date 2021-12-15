@@ -14,6 +14,18 @@ export default function ComponenteLista(props) {
     claseLista="unchecked";
   }
 
+  if(props.priorodad==='alta'){
+
+    claseLista+='alta';
+
+  }if(props.prioridad==='baja'){
+
+    claseLista+='baja';
+
+  }if(){
+    
+  }
+
 
   return <li className={claseLista}>{props.texto}
     <input type="checkbox" ></input>

@@ -3,9 +3,9 @@ import React from 'react';
 import { Lista } from './components/Lista';
 
 export function App() {
-  const elementos1 = [{done:false,texto: 'Elemento (Comp) 1'},{done:true,texto: 'Elemento (Comp) 2'}];
-  const elementos2 = [{done:true,texto: 'Elemento (Comp) 1'},{done:false,texto: 'Elemento (Comp) 2'},{done:false,texto: 'Elemento (Comp) 3'}];
-  const elementos3 = [{done:false,texto: 'Elemento (Comp) 1'},{done:true,texto: 'Elemento (Comp) 2'}];
+  const elementos1 = [{done:false,texto: 'Elemento (Comp) 1', prioridad='baja'},{done:true,texto: 'Elemento (Comp) 2', prioridad='media'}];
+  const elementos2 = [{done:true,texto: 'Elemento (Comp) 1', prioridad: 'alta'},{done:false,texto: 'Elemento (Comp) 2', prioridad='Baja'},{done:false,texto: 'Elemento (Comp) 3', prioridad='media'}];
+  const elementos3 = [{done:false,texto: 'Elemento (Comp) 1', prioridad='alta'},{done:true,texto: 'Elemento (Comp) 2', prioridad='baja'}];
 
 
 
