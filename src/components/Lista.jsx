@@ -5,7 +5,7 @@ export function Lista(props) {
 
   if(props.elementos!==undefined){
     for (let i = 0; i < props.elementos.length; i++) {
-      listaComponentes.push(<ComponenteLista done={false} texto={props.elementos[i]} />);
+      listaComponentes.push(<ComponenteLista done={props.elementos[i].done} texto={props.elementos[i].texto} />);
     }
   }
  
@@ -13,9 +13,6 @@ export function Lista(props) {
     <div>
       {props.titulo} - {props.icono}
       <ul>
-        <ComponenteLista texto="Elemento 1" />
-        <ComponenteLista texto="Elemento 2" />
-        <ComponenteLista texto="Elemento 3" />
         {listaComponentes}
       </ul>
     </div>
