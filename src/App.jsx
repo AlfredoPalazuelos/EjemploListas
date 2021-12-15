@@ -4,7 +4,7 @@ import { Lista } from './components/Lista';
 
 export function App() {
   const elementos1 = ['Elemento (Comp) 1', 'Elemento (Comp) 2'];
-  const elementos2=['Elemento (Comp) 1', 'Elemento (Comp) 2', 'Elemento (Comp) 3'];
+  const elementos2=['Elemento (Comp) 1', 'Elemento (Comp) 2'];
   const elementos3=['Elemento (Comp) 1'];
 
 
