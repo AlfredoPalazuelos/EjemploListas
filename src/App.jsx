@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Lista } from './components/Lista';
+import {ComponenteLista} from './components/ComponenteLista';
 
 export function App() {
   const elementos1 = [
@@ -17,6 +18,7 @@ export function App() {
   return (
     <div>
       <h1>Listas de tareas</h1>
+      <ComponenteLista titulo="Tareas" icono="xD" elementos={elementos1} />
       <Lista titulo="Tareas de la casa" icono="♥" elementos={elementos1} />
       <Lista titulo="Lista de la compra" icono="✌" elementos={elementos2} />
       <Lista titulo="ToDos del curso" icono="🙌" elementos={elementos3} />
