@@ -3,20 +3,21 @@ import ComponenteListaClase from './ComponenteListaClase';
 class ListaClase extends React.Component{
   constructor(props) {
     super(props);
-    this.titulo=props.titulo;
-    this.icono=props.icono
-    this.elementos=props.elementos
+    this.titulo= props.titulo;
+    this.icono=props.icono;
+    this.elementos=props.elementos;
+    this.listaInicial=[];
     this.state={
-      listaInicial: [listaComponentes, setListaComponentes]
-     }
-    this.valorTextInput = React.createRef();
-    this.valorPrioridad = React.createRef();
+      listaComponentes: this.listaInicial,
+    }
+    this.valorTextInput= React.createRef();
+    this.valorPrioridad= React.createRef();
+    
   }
   setElementos(){
-    const listaInicial = [];
   if (this.elementos !== undefined) {
     for (let i = 0; i < this.elementos.length; i++) {
-      listaInicial.push(<ComponenteListaClase 
+        this.listaInicial.push(<ComponenteListaClase 
         done={this.elementos[i].done}
         texto={this.elementos[i].texto}
         prioridad={this.elementos[i].prioridad} 
@@ -24,27 +25,22 @@ class ListaClase extends React.Component{
     }
   }
 }
-  addElemt(){
-   
-    this.setState({listaInicial: [this.state.listaComponentes, ,this.state.setListaComponentes]})
-    this.valorTextInput.current.focus();
-    this.valorPrioridad.current.focus();
-    
-  
-    const newLista = this.state.listaComponentes.concat(
-      <ComponenteListaClase texto ={valorTextInput.current.value} prioridad={valorPrioridad.current.value} />
-    );
-    setListaComponentes(newLista);
-  }
-  
+addElemento(){
 
+  const newLista = this.state.listaComponentes.concat(
+    <ComponenteListaClase 
+    texto ={this.valorTextInput.current.value} 
+    prioridad={this.valorPrioridad.current.value} />
+  );
+  this.setState ({listaComponentes: newLista});
+}
   render(){
-
+    this.setElementos();
     return (
       <div>
       {this.titulo} - {this.icono}
         <ul>
-          {this.listaComponentes}
+          {this.state.listaComponentes}
           <li>
             <input ref={this.valorTextInput} type="Texto" placeholder="Introduce texto"/>
             <br/>
@@ -53,7 +49,7 @@ class ListaClase extends React.Component{
             <option value="media">Media</option> 
             <option value="baja">Baja</option> 
             </select>
-          <button onClick={this.addElemt()}>Añadir</button>
+          <button onClick={this.addElemento.bind(this)}>Añadir</button>
           </li>
         </ul>
       </div>);
