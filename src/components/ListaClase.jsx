@@ -3,18 +3,18 @@ import ComponenteListaClase from './ComponenteListaClase';
 class ListaClase extends React.Component{
   constructor(props) {
     super(props);
-    this.done=props.done;
-    this.texto=props.texto
-    this.prioridad=props.prioridad
+    this.titulo=props.titulo;
+    this.icono=props.icono
+    this.elementos=props.elementos
   }
   setElementos(){
     const listaInicial = [];
-  if (this.props.elementos !== undefined) {
-    for (let i = 0; i < this.props.elementos.length; i++) {
+  if (this.elementos !== undefined) {
+    for (let i = 0; i < this.elementos.length; i++) {
       listaInicial.push(<ComponenteListaClase 
-        done={props.elementos[i].done}
-        texto={props.elementos[i].texto}
-        prioridad={props.elementos[i].prioridad} 
+        done={this.elementos[i].done}
+        texto={this.elementos[i].texto}
+        prioridad={this.elementos[i].prioridad} 
       />);
     }
   }
@@ -31,7 +31,7 @@ class ListaClase extends React.Component{
 
     return (
       <div>
-      {props.titulo} - {props.icono}
+      {this.titulo} - {this.icono}
         <ul>
           {listaComponentes}
           <li>
@@ -48,4 +48,4 @@ class ListaClase extends React.Component{
       </div>);
   }
 }
-export default ComponenteListaClase;
+export default ListaClase;

@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import ListaClase from './components/Lista';
+import ListaClase from './components/ListaClase';
 
 
 export default function App(){
@@ -16,10 +16,10 @@ export default function App(){
   ];
   return (
     <div>
-      <h1>Lista de Tareas </h1>;
-      <ListaClase titulo = "Tareas de casa" icono ="♕" elementos={elementos1}/>;
-      <ListaClase titulo = "Tareas de clase" icono ="♚" elementos={elementos2}/>;
-      <ListaClase titulo = "Pintar la casa" icono ="⚝ " elementos={elementos3}/>;
+      <h1>Lista de Tareas </h1>
+      <ListaClase titulo = "Tareas de casa" icono ="♕" elementos={elementos1}/>
+      <ListaClase titulo = "Tareas de clase" icono ="♚" elementos={elementos2}/>
+      <ListaClase titulo = "Pintar la casa" icono ="⚝ " elementos={elementos3}/>
     </div>
     );
 }
