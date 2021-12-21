@@ -38,7 +38,7 @@ class ComponenteListaClase extends React.Component {
 export default ComponenteListaClase;
 ComponenteListaClase.defaultProps = {
   prioridad: 'baja',
-  done: false
+  done: false,
 };
 
 export default ComponenteListaClase;

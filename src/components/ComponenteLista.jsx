@@ -1,29 +1,27 @@
-import React, { useState, useRef } from 'react';
-import ComponenteListaClase from './ComponenteListaClase';
+import React from "react";
 
-class lista extends React.Components{
+import './componente-lista.css';
 
-  listaInicial = [];
-  if (elementos = undefined) {
-    for (let i = 0; i < props.elementos.length; i++) {
-      listaInicial.push(
-        <ComponenteListaClase
-          done={props.elementos[i].done}
-          texto={props.elementos[i].texto}
-          prioridad={props.elementos[i].prioridad}
-        />
-      );
-    }
+export default function ComponenteLista(props){
+  let claseLista = setElementClass();
+
+function setElementClass(){
+  props.prioridad;
+  if(props.done){
+    claseLista +=' el-done';
+  }else{
+    claseLista +=' el-undone';
   }
-
-
-
 }
 
-export default Lista;
-Lista.defaultProps = {
-  prioridad: 'baja',
-  done: false
-};
+ return (
+  <li className = {claseLista}>
+    <input type="checkbox"  onChange={setTaskStatus}/>
+    {props.texto}
+  </li>
+ );
+}
 
-export default ComponenteListaClase;
+ComponenteLista.defaultProps= {
+  prioridad: 'baja',
+}
