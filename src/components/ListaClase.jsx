@@ -6,6 +6,11 @@ class ListaClase extends React.Component{
     this.titulo=props.titulo;
     this.icono=props.icono
     this.elementos=props.elementos
+    this.state={
+      listaInicial: [listaComponentes, setListaComponentes]
+     }
+    this.valorTextInput = React.createRef();
+    this.valorPrioridad = React.createRef();
   }
   setElementos(){
     const listaInicial = [];
@@ -18,31 +23,37 @@ class ListaClase extends React.Component{
       />);
     }
   }
-  const [listaComponentes, setListaComponentes] = useState(listaInicial);
-  const valorTextInput= useRef('');
-  const valorPrioridad= useRef('');
-
-  const newLista = listaComponentes.concat(
-    <ComponenteListaClase texto ={valorTextInput.current.value} prioridad={valorPrioridad.current.value} />
-  );
-  setListaComponentes(newLista);
 }
+  addElemt(){
+   
+    this.setState({listaInicial: [this.state.listaComponentes, ,this.state.setListaComponentes]})
+    this.valorTextInput.current.focus();
+    this.valorPrioridad.current.focus();
+    
+  
+    const newLista = this.state.listaComponentes.concat(
+      <ComponenteListaClase texto ={valorTextInput.current.value} prioridad={valorPrioridad.current.value} />
+    );
+    setListaComponentes(newLista);
+  }
+  
+
   render(){
 
     return (
       <div>
       {this.titulo} - {this.icono}
         <ul>
-          {listaComponentes}
+          {this.listaComponentes}
           <li>
-            <input ref={valorTextInput} type="Texto" placeholder="Introduce texto"/>
+            <input ref={this.valorTextInput} type="Texto" placeholder="Introduce texto"/>
             <br/>
-            <select ref={valorPrioridad} name="prioridad">
+            <select ref={this.valorPrioridad} name="prioridad">
             <option value="alta">Alta</option> 
             <option value="media">Media</option> 
             <option value="baja">Baja</option> 
             </select>
-          <button onClick={setElement()}>Añadir</button>
+          <button onClick={this.addElemt()}>Añadir</button>
           </li>
         </ul>
       </div>);
