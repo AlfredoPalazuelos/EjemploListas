@@ -5,7 +5,7 @@ import ListaClase from './components/ListaClase';
 
 export default function App(){
   const elementos1 = [
-    {texto: 'Desayunar', prioridad:'alta'}, 
+    {texto: 'Tender la ropa', prioridad:'alta'}, 
     {texto:'Comer'},
     {texto:'Limpiar', prioridad:'media'},
   ];
