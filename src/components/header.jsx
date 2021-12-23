@@ -6,7 +6,7 @@ import './title.css'
 function Title() {
   return (
     <div className='Title'>
-      <h1>Lista</h1>
+      <h1>Lista de Tareas ♠</h1>
     </div>
   )
 }
