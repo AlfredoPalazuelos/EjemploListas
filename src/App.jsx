@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import ListaClase from './components/ListaClase';
+import Title from './components/header';
 
 
 export default function App(){
@@ -18,7 +19,12 @@ export default function App(){
     {done: true, texto:'Comprar pintura', prioridad:'media'},
   ];
   return (
+
+      
+    
+    
     <div>
+      <Title/>
       <h1>Lista de Tareas ♠</h1>
       <ListaClase titulo = "Tareas de la casa" icono ="📦" elementos={elementos1}/>
       <ListaClase titulo = "Tareas de clase" icono ="📜" elementos={elementos2}/>
