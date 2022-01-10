@@ -9,15 +9,16 @@ export default function App(){
 
   return (
     <>
+    <Router>
     <nav>
       <h1>Mi aplicacion</h1>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/listas">Lista de Tareas</a></li>
-        <li><a href="/perfil">Perfil</a></li>
+        <li><Link to ="/">Home</Link></li>
+        <li><Link to ="/listas">Lista de tareas</Link></li>
+        <li><Link to ="/perfil">Perfil</Link></li>
       </ul>
     </nav>
-    <Router>
+    
       <Route path='/' component={Home}></Route>
       <Route path='/listas' component={PaginaListas}></Route>
       <Route path='/perfil' component={Perfil}></Route>
