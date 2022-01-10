@@ -8,12 +8,6 @@ function Title() {
   return (
     <div className='Title'>
       <h1>Lista de Tareas ♠</h1>
-      <HeaderRNE>
-        leftComponent={{
-          icon: 'menu',
-          color: '#fff',
-        }}
-        </HeaderRNE>
     </div>
   )
 }
