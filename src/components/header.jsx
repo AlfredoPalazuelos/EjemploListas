@@ -3,7 +3,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {MenuItems} from '../data/MenuItems';
-import './barranav.css'
+import './barranav.css';
 
 
 class Header extends React.Component{

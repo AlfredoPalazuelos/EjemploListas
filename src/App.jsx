@@ -9,7 +9,7 @@ import Header from './components/header';
 import {MenuItems} from './data/MenuItems';
 
 
-createMenuRutas() {
+function createMenuRutas(){
 
   const listRoutes=[];
 
