@@ -7,7 +7,7 @@ export const MenuItems =[
   {
     paht: '/',
     id: 1,
-    title: 'home',
+    title: 'Home',
     component: Home
   },
   {    
