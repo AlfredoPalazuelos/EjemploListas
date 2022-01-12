@@ -28,18 +28,7 @@ createMenuLink(){
 
 }
 
-createMenuRutas(){
 
-  const listRoutes=[];
-
-  for(let i=0; i<MenuItems.length;i++){
-    listRoutes.push(
-      <Route path={MenuItems[i].paht} exact component={MenuItems[i].component}></Route>
-
-    )
-  }
-  return listRoutes;
-}
 
 
 render(){
