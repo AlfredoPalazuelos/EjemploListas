@@ -15,7 +15,7 @@ function createMenuRutas(){
 
   for(let i=0; i<MenuItems.length;i++){
     listRoutes.push(
-      <Route path={MenuItems[i].paht} exact component={MenuItems[i].component}></Route>
+      <Route key={MenuItems[i].id} path={MenuItems[i].paht} exact component={MenuItems[i].component}></Route>
     );
   }
   return listRoutes;
