@@ -1,14 +1,9 @@
 import React from 'react';
 
-export function Home(){
-
+export function Home() {
   return (
-    <div>
-      <h1>Bienvenido</h1>
+    <div className="main-site">
+      <h1>Bienvenido!</h1>
     </div>
-
-
-  )
-
-
+  );
 }

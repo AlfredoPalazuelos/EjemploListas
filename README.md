@@ -1,3 +1,3 @@
-# react-j92mdy
+# clase-react-1
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-j92mdy)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/clase-react-1)
