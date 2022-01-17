@@ -13,18 +13,18 @@ export function PaginaListas() {
     { done: true, texto: 'Queso' },
     { done: false, texto: 'Leche' },
   ];
-  const elementos3 = [{ done: false, texto: 'Estudiar React.js' }];
+  const elementos3 = [{ done: false, texto: 'Estudiar DI' }];
 
   return (
     <div className="main-site">
       <h1>Listas de tareas</h1>
       <Lista
-        titulo="Tareas de la casa (funciones)"
+        titulo="Tareas casa "
         icono="♥"
         elementos={elementos1}
       />
       <ListaClase
-        titulo="ToDos del curso (clases)"
+        titulo="Tareas Clase "
         icono="🙌"
         elementos={elementos3}
       />
