@@ -1,5 +1,6 @@
 import React from 'react';
-import {Table} from 'react-bootstrap';
+import {Table, Card, Button} from 'react-bootstrap';
+import Container from 'react-bootstrap/esm/Container';
 import {ListaTabla, TitulosTabla}  from '../data/ListaTabla';
 class BootstrapTabla extends React.Component{
 
@@ -10,6 +11,7 @@ class BootstrapTabla extends React.Component{
 
   render(){
     return (
+<Container>
 <Table striped bordered hover size="sm">
   <thead>
     <tr>
@@ -30,6 +32,16 @@ class BootstrapTabla extends React.Component{
       })}
   </tbody>
 </Table>
+<Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Body>
+    <Card.Title>{ListaTabla[1].usuario}</Card.Title>
+    <Card.Text>
+      Usuario con nombre {ListaTabla[1].nombre}
+    </Card.Text>
+  </Card.Body>
+</Card>
+</Container>
 
 
 
