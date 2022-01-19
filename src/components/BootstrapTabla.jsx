@@ -6,8 +6,19 @@ class BootstrapTabla extends React.Component{
 
   constructor(props){
     super(props);
+    this.state={nombre:'', usario:'', apellido:'', img: ''}
   }
 
+
+  cambiaruser(item){
+
+    const nombre=item.nombre;
+    const usuario=item.usuario;
+    const apellido=item.apellido;
+    const img=item.img;
+    this.setState({nombre: nombre, usuario: usuario, apellido: apellido, img: img});
+
+  }
 
   render(){
     return (
@@ -23,7 +34,7 @@ class BootstrapTabla extends React.Component{
   <tbody>
       {ListaTabla.map((item) => {
         return(
-        <tr>
+        <tr onClick={() => this.cambiaruser(item)}>
           <td>{item.nombre}</td>
           <td>{item.apellido}</td>
           <td>{item.usuario}</td>
@@ -33,11 +44,11 @@ class BootstrapTabla extends React.Component{
   </tbody>
 </Table>
 <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Img variant="top" src={this.state.img} />
   <Card.Body>
-    <Card.Title>{ListaTabla[1].usuario}</Card.Title>
+    <Card.Title>{this.state.usuario}</Card.Title>
     <Card.Text>
-      Usuario con nombre {ListaTabla[1].nombre}
+      Usuario con nombre {this.state.nombre} y apellido {this.state.apellido}
     </Card.Text>
   </Card.Body>
 </Card>
