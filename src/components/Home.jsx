@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+import {ListaUsuarios} from '../data/ListaUsuarios';
 
 
 class Home extends React.Component {
@@ -15,10 +16,6 @@ class Home extends React.Component {
 
   }
 
-   
-
-
-
   login() {
     this.setState({ user: this.valorusuario.current.value, pass: this.valorpass.current.value });
   }
@@ -28,10 +25,10 @@ class Home extends React.Component {
   }
 
   render() {
+    for (let i=0; i<ListaUsuarios.length; i++){
+
     if (
-      this.state !== null &&
-      this.state.user !== null &&
-      this.state.user !== ''
+      this.state.user === ListaUsuarios[i].usuario 
     ) {
       return (
         <div className="main-site">
@@ -43,7 +40,7 @@ class Home extends React.Component {
         <Container>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Nombre de usuario o email: </Form.Label>
+              <Form.Label>Nombre de usuario : </Form.Label>
               <Form.Control ref={this.valorusuario} type="email" placeholder="Usuario o email" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -61,8 +58,9 @@ class Home extends React.Component {
       );
     }
   }
+  }
 
-  componetWillUnmount(){
+  componentWillUnmount(){
 
     localStorage.setItem('user',this.state.user);
     localStorage.setItem('password',this.state.pass);

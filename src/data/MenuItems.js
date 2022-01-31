@@ -1,6 +1,8 @@
 import Home from '../components/Home';
 import { PaginaListas } from '../components/PaginaListas';
-import { Perfil } from '../components/Perfil';
+import { Tabla } from '../components/Tabla';
+import Perfil from '../components/Perfil';
+import ApiOnline from '../components/ApiOnline';
 
 export const MenuItems = [
   {
@@ -17,9 +19,21 @@ export const MenuItems = [
   },
   {
     id: 3,
+    path: '/tabla',
+    title: 'Tabla',
+    component: Tabla,
+  },
+  {
+    id: 4,
     path: '/perfil',
     title: 'Perfil',
     component: Perfil,
+  },
+  {
+    id: 5,
+    path: '/TablaPelis',
+    title: 'TablaPelis',
+    component: ApiOnline,
   },
 ];
 
