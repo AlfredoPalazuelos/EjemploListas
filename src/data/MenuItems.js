@@ -3,7 +3,7 @@ import { PaginaListas } from '../components/PaginaListas';
 import { Tabla } from '../components/Tabla';
 import Perfil from '../components/Perfil';
 import ApiOnline from '../components/ApiOnline';
-import TablaEspacio from '../components/TablaEspacio';
+import TablaVideojuegos from '../components/TablaVideojuegos';
 
 export const MenuItems = [
   {
@@ -38,9 +38,9 @@ export const MenuItems = [
   },
   {
     id: 6,
-    path: '/TablaEspacio',
-    title: 'TablaEspacio',
-    component: TablaEspacio,
+    path: '/TablaVideojuegos',
+    title: 'TablaVideojuegos',
+    component: TablaVideojuegos,
   },
 ];
 

@@ -1,28 +1,28 @@
 import React from 'react';
-import {Table, Card, Button} from 'react-bootstrap';
+import {Table, Card} from 'react-bootstrap';
 import Container from 'react-bootstrap/esm/Container';
-class TablaEspacio extends React.Component{
+class TablaVideojuegos extends React.Component{
 
   constructor(props){
     super(props);
-    this.state={img: '',titulo:'', director:'', año:'', puntuacion: '',tableData: [] }
+    this.state={titulo:'', genero:'', plataforma:'', desarrollador: '',tableData: [] }
   }
 
 
   cambiaruser(item){
 
     const titulo=item.title;
-    const director=item.director;
-    const año=item.release_date;
-    const puntuacion=item.rt_score;
-    this.setState({img:item.image ,titulo: titulo, director: director, año: año, puntuacion: puntuacion});
+    const genero=item.genre;
+    const plataforma=item.platform;
+    const desarrollador=item.developer;
+    this.setState({titulo: titulo, genero: genero, plataforma: plataforma, desarrollador: desarrollador});
 
   }
 
   async componentDidMount(){
 
-    const response= await fetch('http://api.auroras.live');
-    const responseData= await response.json();
+    const response= await fetch('https://www.freetogame.com/api/games',{ mode: 'no-cors'});
+    const responseData= await response.end();
     this.setState({tableData: responseData});
 
   }
@@ -34,9 +34,9 @@ class TablaEspacio extends React.Component{
   <thead>
     <tr>
       <th>Titulo</th>
-      <th>Director</th>
-      <th>Año</th>
-      <th>Puntuacion</th>
+      <th>Genero</th>
+      <th>Plataforma</th>
+      <th>Dessarrollador</th>
     </tr>
   </thead>
   <tbody>
@@ -44,9 +44,9 @@ class TablaEspacio extends React.Component{
         return(
         <tr onClick={() => this.cambiaruser(item)}>
           <td>{item.title}</td>
-          <td>{item.director}</td>
-          <td>{item.release_date}</td>
-          <td>{item.rt_score}</td>
+          <td>{item.genre}</td>
+          <td>{item.platform}</td>
+          <td>{item.developer}</td>
          </tr>
         )
       })}
@@ -57,7 +57,7 @@ class TablaEspacio extends React.Component{
   <Card.Body>
     <Card.Title>{this.state.titulo}</Card.Title>
     <Card.Text>
-      Pelicula del director {this.state.director} y del año  {this.state.año}
+      Videojuego desarrollado por {this.state.developer} para la plataforma  {this.state.plataforma}
     </Card.Text>
   </Card.Body>
 </Card>
@@ -72,4 +72,4 @@ class TablaEspacio extends React.Component{
 
 }
 
-export default TablaEspacio;
+export default TablaVideojuegos;
